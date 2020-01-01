@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Pourquoi votre distribution utilise-t-elle toujours un noyau Linux «obsolète»?</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../blog-css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../../blog-css/css/blog-post.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Linux-New</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Actualité</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../tutoriel/index.html">Tutoriel</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+      <!-- Post Content Column -->
+    <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Pourquoi votre distribution utilise-t-elle toujours un noyau Linux «obsolète»?</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          publié par
+          <a href="https://dev-pro.xyz/">Dev-Pro</a>
+        </p>
+		<hr>
+		<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../index.html">Accueil</a></li>
+    <li class="breadcrumb-item"><a href="../../tutoriel/index.html">Tutoriel</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Pourquoi votre distribution utilise-t-elle toujours un noyau Linux «obsolète»?</li>
+  </ol>
+</nav>
+		
+		  <hr>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Publié le 1 Janvier 2019 à 11:50 PM</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+      <img class="img-fluid rounded" src="../img/linux-kernel.jpg" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+      <p class="lead"><strong><a href="https://dev-pro.xyz" target="_blank">Vérifiez votre version du noyau Linux.</a></strong></p>
+		<p>Il y a de fortes chances que vous constatiez que la version du noyau que votre système utilise a déjà atteint la fin de sa vie (EOL= End of life), comme indiqué sur le site Web du noyau Linux.</p>
+		<p>End of life signifie qu’un logiciel n’obtiendra plus de corrections de bogues ni d’assistance.</p>
+		<p>Cela pose des questions valables. Pourquoi ma distribution Linux utilise-t-elle un noyau en fin de vie? N'est-ce pas un risque pour la sécurité? Mon système est-il sûr?</p>
+		<p>Permettez-moi d'expliquer toutes ces questions dans cet article</p>
+		<p>La prise en charge du noyau en upstream et la prise en charge du noyau de votre distribution sont deux choses différentes.</p>
+		<p>Par exemple, le noyau Linux 4.15 pourrait avoir atteint la fin de sa vie (selon le site officiel du noyau Linux), mais la version Ubuntu 18.04 LTS l'utilisera et le maintiendra jusqu'en avril 2023 en rétroportant les correctifs de sécurité et les correctifs de bogues.</p>
+		<h3>Vérification de la version du noyau Linux et recherche de son état de fin de vie</h3>
+		<p>Vérifions d'abord la version du noyau Linux sur votre système:</p>
+		<p><code>uname -r</code></p>
+		<p>J'utilise Ubuntu 18.04 et cela montre la version du noyau Linux comme ceci:</p>
+		<p><code>siz@siz:~$ uname -r</code></p>
+		<p><code>5.0.0-37-generic</code></p>
+		<p>Maintenant, vous pouvez aller sur le site officiel du noyau Linux et voir quels noyaux Linux sont toujours pris en charge. Il est affiché sur la page d'accueil elle-même.</p>
+		<p><a href="https://www.kernel.org/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Linux Kernel Site Officiel</a></p>
+		<p>Vous devriez voir un statut comme celui-ci:</p>
+		<p><img class="img-fluid rounded" src="../../actualite/img/linux-kernel-status.jpg.webp" alt=""></p>
+		<p>Si vous ne voyez pas de version de noyau répertoriée sur la page d'accueil du site Web du noyau, cela signifie qu'une version spécifique a atteint la fin de sa durée de vie.</p>
+		<p>Comme vous pouvez le voir, le noyau 5.0 n'est pas répertorié ici. Cela indique que cette version du noyau n'est plus prise en charge. En fait, il est arrivé en <a href="//lkml.iu.edu/hypermail/linux/kernel/1906.0/02354.html" target="_blank">fin de vie en juin 2019</a></p>
+		<p>Malheureusement, le cycle de vie d'un noyau Linux ne suit pas un modèle défini. Ce n'est PAS comme si une version stable du noyau régulière était prise en charge pendant X mois et un noyau de support à long terme (LTS) serait pris en charge pendant Y ans.</p>
+		<p>En fonction de la demande et des exigences, il pourrait y avoir plusieurs versions de noyau LTS avec différentes fin de vie. Vous pouvez les trouver avec leur fin de vie projetée sur <a href="//www.kernel.org/category/releases.html" target="_blank">cette page</a>.</p>
+		<p>Vient maintenant la grande question. Pourquoi Ubuntu fournit-il le noyau 5.0 si le site Web du noyau Linux montre qu'il a atteint sa fin de vie?</p>
+		<p>Votre distribution utilise un noyau Linux EOL mais ça va!</p>
+		<p>Vous êtes-vous déjà demandé pourquoi Ubuntu / Debian / Fedora, etc. sont appelés distributions Linux? C’est parce qu’ils «distribuent» le noyau Linux.</p>
+
+<p>Ils ont leur propre modification du noyau Linux, ils ajoutent les éléments GUI (environnement de bureau, serveur d'affichage, etc.) et les logiciels et ils le mettent à la disposition de leurs utilisateurs.</p>
+
+<p>Dans le flux de travail typique, une distribution Linux choisira un noyau à fournir à ses utilisateurs. Et puis, il conservera ce noyau pendant des mois ou des années même après la fin de vie du noyau.</p>
+
+<p>Comment est-ce sûr alors? C'est parce que la distribution maintient le noyau en rétroportant toutes les corrections importantes à son noyau.</p>
+
+<p>En d'autres termes, votre distribution Linux s'assure que votre noyau Linux est bien corrigé et a toutes les corrections de bogues et les nouvelles fonctionnalités importantes qui lui sont rétroportées. Il y aura des milliers de changements en plus de «l'ancien noyau Linux obsolète».</p>
+		
+		<p>Lorsque le site Web du noyau Linux indique qu'une certaine version du noyau a atteint EOL, cela signifie que les principaux responsables du noyau Linux ne vont plus mettre à jour / corriger cette version du noyau.</p>
+
+<p>Mais en même temps, les développeurs de Debian / Ubuntu ou d'autres distributions travaillent pour garder la même ancienne version en vie en apportant les modifications pertinentes des versions plus récentes du noyau (maintenues par l'équipe du noyau) à l'ancien noyau de votre distribution.</p>
+
+<p>En fin de compte, même s'il semble que votre distribution utilise un noyau Linux obsolète, il est en fait bien entretenu et pas vraiment obsolète.</p>
+		
+		<h3>Devriez-vous utiliser la dernière version stable du noyau?</h3>
+		<p>Une nouvelle version stable du noyau Linux est publiée tous les 2-3 mois. Et cela fait que de nombreux utilisateurs se demandent qui ils peuvent mettre la main sur cette nouvelle chose brillante.</p>
+
+<p>Pour être franc, vous ne devriez pas faire cela à moins d'avoir une assez bonne raison à cela. Votre distribution ne vous le fournit pas. Vous ne pouvez pas simplement utiliser ‘sudo apt give-me-the-latest-stable-kernel’.</p>
+
+<p>Maintenant, l'installation manuelle de la version du noyau Linux principal pourrait être un défi en soi. Même si vous parvenez à l'installer, c'est à vous de vous assurer que ce noyau est mis à jour à chaque fois qu'il y a un bug. Et lorsque ce nouveau noyau arrive en fin de vie, il vous incombe de passer à la nouvelle version du noyau. Il ne sera pas géré avec une mise à niveau appropriée comme les mises à jour régulières d'Ubuntu.</p>
+		
+		<p>Vous devez également garder à l'esprit que votre distribution contient également des pilotes et des correctifs que vous ne pourrez peut-être pas utiliser si vous passez au noyau principal.</p>
+		<p>J'espère que vous comprenez mieux ce sujet et que vous ne paniquerez pas la prochaine fois que vous découvrirez que la version du noyau que votre système utilise a atteint la fin de sa vie.</p>
+		
+		
+<div id="share-buttons">
+    
+    <!-- Buffer -->
+    <a href="https://bufferapp.com/add?url=//www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html&amp;text=Simple Share Buttons" target="_blank">
+        <img src="../../share/buffer.png" alt="Buffer" />
+    </a>
+       
+    <!-- Email -->
+    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 //www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html">
+        <img src="../../share/email.png" alt="Email" />
+    </a>
+ 
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=//www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html" target="_blank">
+        <img src="../../share/facebook.png" alt="Facebook" />
+    </a>
+      
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=//www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html" target="_blank">
+        <img src="../../share/linkedin.png" alt="LinkedIn" />
+    </a>
+    
+    <!-- Pinterest -->
+    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+        <img src="../../share/pinterest.png" alt="Pinterest" />
+    </a>
+    
+    <!-- Print -->
+    <a href="javascript:;" onclick="window.print()">
+        <img src="../../share/print.png" alt="Print" />
+    </a>
+    
+    <!-- Reddit -->
+    <a href="http://reddit.com/submit?url=//www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html&amp;title=Simple Share Buttons" target="_blank">
+        <img src="../../share/reddit.png" alt="Reddit" />
+    </a>
+    
+    <!-- StumbleUpon-->
+    <a href="http://www.stumbleupon.com/submit?url=//www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html&amp;title=Simple Share Buttons" target="_blank">
+        <img src="../../share/stumbleupon.png" alt="StumbleUpon" />
+    </a>
+    
+    <!-- Tumblr-->
+    <a href="http://www.tumblr.com/share/link?url=//www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html&amp;title=Simple Share Buttons" target="_blank">
+        <img src="../../share/tumblr.png" alt="Tumblr" />
+    </a>
+     
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=//www.linux-new.xyz/tutoriel/decembre-2019/comment-installer-des-themes-dans-ubuntu.html&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+        <img src="../../share/twitter.png" alt="Twitter" />
+    </a>
+
+</div>
+        <hr>
+    </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Mots-clés<br>
+          </h5>
+          <div class="card-body">
+          <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li> <a href="//www.gnome.org/">Gnome</a></li>
+                  <li> <a href="//extensions.gnome.org/">Gnome Shell</a></li>
+                  <li> <a href="//old-releases.ubuntu.com/releases/17.10/">Ubuntu 17.10</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li> <a href="//releases.ubuntu.com/16.04/">Ubuntu 16.04</a></li>
+                  <li> <a href="//releases.ubuntu.com/18.04/">Ubuntu 18.04</a></li>
+                  <li> <a href="//doc.ubuntu-fr.org/unity">Unity</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Catégorie</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">Open Source</a>
+                  </li>
+                  <li>
+                    <a href="#">Gnome Theme</a>
+                  </li>
+                  <li>
+                    <a href="#">Ubuntu</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">Gnome Shell</a>
+                  </li>
+                  <li>
+                    <a href="#">Thèmes</a>
+                  </li>
+                  <li>
+                    <a href="#">Tutoriel</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Pub</h5>
+          <div class="card-body">
+            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; 2019-<script>document.write(new Date().getFullYear());</script> Tous droits réservés. | Conception <a href="https://dev-pro.xyz" target="_blank">Dev-Pro</a></p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../blog-css/vendor/jquery/jquery.min.js"></script>
+  <script src="../../blog-css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+</body>
+
+</html>
